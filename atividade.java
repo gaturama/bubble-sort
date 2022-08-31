@@ -31,6 +31,7 @@ public class atividade {
                                 System.out.println(" Deu erro, tente novamente!");
             } 
         }
+         // testando o esquema de vetores 
             int[] vetor1 = new int[5];
 
             vetor [1] = 5;
