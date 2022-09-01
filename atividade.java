@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.File;
 import java.util.Arrays;
 
-public class atividade {
+public class atividade { 
 
     public static void main (String[] args) {
         
@@ -17,35 +17,43 @@ public class atividade {
 
         // Inserindo dados do arquivo de texto
         String valores = new String(); 
-        String arqv = "C:/Users/Gabriel/github/yourrepositories/bubblesort/arquivo.txt";
+        String arqv = "C:/Users/gabriel.oliveira20/Desktop/Exe JavaPoo/bubble sort/arquivo.txt";
 
-        File scan = new File (arqv);
+        File file = new File (arqv);
 
-        int[] vetor = new int [5];
+        int[] vetor = new int [10];
         
-        while(scan.exists()){
+        
             try{
+                // Puxando os dados do arquivo de texto para o programa
                 FileReader leitura = new FileReader(arqv);
-                    BufferedReader bufferedReader = new BufferedReader(leitura);
-                         }catch(IOException e){
-                                System.out.println(" Deu erro, tente novamente!");
-            } 
-        }
-         // testando o esquema de vetores 
-            int[] vetor1 = new int[5];
-
-            vetor [1] = 5;
-                vetor [2] = 6;
-                     vetor [3] = 4;
-                        vetor [4] = 9;
-                            vetor [5] = 7;
-
-                                 for(int i=0; i<vetor.length; i++){
-                                    System.out.println(vetor1[i]);                          
-                                 }
-                                    System.out.println(vetor1);
-
-                                    System.out.println(Arrays.toString(vetor1));
-                                }
+                    BufferedReader bufferedReader = new BufferedReader(leitura); //função para ler o arquivo
+                        int linhas = 0;
+                            while(bufferedReader.readLine()!= null){
+                                linhas++;
                             }
+                            bufferedReader.close(); //fechamento da leitura
+
+                                int[] lista = new int[linhas]; 
+                                    leitura = new FileReader(arqv);
+                                        bufferedReader = new BufferedReader(leitura); // releitura do arquivo
+                                            linhas = 0;
+                                                String linha ="";
+                                                     while((linha = bufferedReader.readLine())!= null){
+                                                        lista[linhas] = Integer.parseInt(linha);
+                                                             linhas++;
+                                                        }
+                                                             bufferedReader.close();
+
+                                                                System.out.println(Arrays.toString(lista));
+
+                                                                    for (int i = linhas; i < 0; i++ ){ //tentativa de ordenar o array :(
+                                                                         System.out.println(vetor[linhas]);
+                                                                     }
+                                                                 }catch(IOException e){
+                                                            System.out.println("Deu erro, tente novamente!" + e.getMessage()); // mensagem de erro, caso o usuário faça algo errôneo
+                                                             } 
+                                                         }
+                                                      }
+                          
 
