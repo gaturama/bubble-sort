@@ -15,11 +15,10 @@ public class atividade {
         System.out.println(" ATIVIDADE AVALIATIVA ");
         System.out.println("*---------------------*");
 
-        // Inserindo dados do arquivo de texto
-        String valores = new String(); 
+        
         String arqv = "C:/Users/gabriel.oliveira20/Desktop/Exe JavaPoo/bubble sort/arquivo.txt";
 
-        File file = new File (arqv);
+        File file = new File (arqv); // Inserindo o arquivo de texto
 
         int[] vetor = new int [10];
         
@@ -34,7 +33,7 @@ public class atividade {
                             }
                             bufferedReader.close(); //fechamento da leitura
 
-                                int[] lista = new int[linhas]; 
+                                int[] lista = new int[linhas]; // programa irá ler linha a linha do arquivo
                                     leitura = new FileReader(arqv);
                                         bufferedReader = new BufferedReader(leitura); // releitura do arquivo
                                             linhas = 0;
@@ -43,7 +42,7 @@ public class atividade {
                                                         lista[linhas] = Integer.parseInt(linha);
                                                              linhas++;
                                                         }
-                                                             bufferedReader.close();
+                                                             bufferedReader.close(); // outro fechamento de leitura
 
                                                                 System.out.println(Arrays.toString(lista));
 
