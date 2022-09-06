@@ -66,6 +66,8 @@ public class atividade {
             System.out.println(Arrays.toString(lista));
         } catch(IOException e){
             System.out.println("Deu erro, tente novamente!" + e.getMessage()); // mensagem de erro, caso o usuário faça algo errôneo
+
+            
         } 
     }
 }
